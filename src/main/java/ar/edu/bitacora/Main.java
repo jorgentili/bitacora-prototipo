@@ -66,10 +66,10 @@ public class Main {
 
             Docente nuevo = new Docente();
             nuevo.setLegajo("DOC-001");
-            nuevo.setNombre("Marta");
-            nuevo.setApellido("Suárez");
-            nuevo.setDni("30222111");
-            nuevo.setEmail("marta.suarez@bitacora.edu");
+            nuevo.setNombre("Guido");
+            nuevo.setApellido("Gentili");
+            nuevo.setDni("10549100");
+            nuevo.setEmail("guido.gentili@bitacora.edu");
             nuevo.setActivo(true);
 
             dao.insertar(nuevo);
