@@ -35,7 +35,7 @@ CREATE TABLE inscripciones (
  CONSTRAINT fk_inscripcion_curso FOREIGN KEY (id_curso) REFERENCES cursos(id_curso)
 );
 
--- Un docente
+-- Docente
 CREATE TABLE docentes (
  id_docente INT AUTO_INCREMENT PRIMARY KEY,
  legajo VARCHAR(20) NOT NULL UNIQUE,
@@ -46,14 +46,14 @@ CREATE TABLE docentes (
  activo BOOLEAN NOT NULL DEFAULT TRUE
 );
 
--- Una materia (Matemática, Historia, etc.)
+-- Una materia
 CREATE TABLE materias (
  id_materia INT AUTO_INCREMENT PRIMARY KEY,
  nombre VARCHAR(80) NOT NULL UNIQUE,
  descripcion VARCHAR(255)
 );
 
--- Qué docente dicta qué materia en qué curso
+-- Docente dicta - materia en curso X
 CREATE TABLE dictados (
  id_dictado INT AUTO_INCREMENT PRIMARY KEY,
  id_docente INT NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE dictados (
  CONSTRAINT fk_dictado_curso FOREIGN KEY (id_curso) REFERENCES cursos(id_curso)
 );
 
--- Asistencia de un estudiante inscripto, en una fecha puntual
+-- Asistencia de un estudiante
 CREATE TABLE asistencias (
  id_asistencia INT AUTO_INCREMENT PRIMARY KEY,
  id_inscripcion INT NOT NULL,
@@ -76,7 +76,7 @@ CREATE TABLE asistencias (
  CONSTRAINT fk_asistencia_inscripcion FOREIGN KEY (id_inscripcion) REFERENCES inscripciones(id_inscripcion)
 );
 
--- Una evaluación (examen, trabajo práctico) de una materia dictada
+-- Una evaluación
 CREATE TABLE evaluaciones (
  id_evaluacion INT AUTO_INCREMENT PRIMARY KEY,
  id_dictado INT NOT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE evaluaciones (
  CONSTRAINT fk_evaluacion_dictado FOREIGN KEY (id_dictado) REFERENCES dictados(id_dictado)
 );
 
--- La nota de un estudiante en una evaluación puntual
+-- Calificacion de un estudiante en una evaluacion
 CREATE TABLE calificaciones (
  id_calificacion INT AUTO_INCREMENT PRIMARY KEY,
  id_evaluacion INT NOT NULL,
@@ -104,8 +104,8 @@ INSERT INTO cursos(nombre,anio_lectivo,division) VALUES
 ('Primer Año',2026,'A'),('Segundo Año',2026,'A'),('Tercer Año',2026,'B');
 
 INSERT INTO estudiantes(legajo,nombre,apellido,dni,email,fecha_nacimiento) VALUES
-('ALU-001','Juan','Pérez','40111222','juan.perez@bitacora.edu','2009-05-15'),
-('ALU-002','Sofía','Gómez','40222333','sofia.gomez@bitacora.edu','2009-08-21');
+('ALU-001','Jorge','Gentili','28387800','jorge.gentili@bitacora.edu','1980-10-11'),
+('ALU-002','Sofía','Rovere','40222333','sofia.rovere@bitacora.edu','2009-08-21');
 
 INSERT INTO inscripciones(id_estudiante,id_curso,fecha_inscripcion) VALUES
 (1,1,CURRENT_DATE()),(2,1,CURRENT_DATE());
