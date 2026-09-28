@@ -14,7 +14,7 @@ import java.util.List;
 // Sabe cómo guardar, leer y borrar docentes en MySQL. Mismo patrón que EstudianteDAO.
 public class DocenteDAO {
 
-    // ---------- INSERTAR ----------
+    // ---------- Insertar ----------
     public void insertar(Docente d) throws SQLException {
 
         String sql = "INSERT INTO docentes (legajo, nombre, apellido, dni, email, activo) " +
@@ -46,7 +46,7 @@ public class DocenteDAO {
         }
     }
 
-    // ---------- CONSULTAR ----------
+    // ---------- Consltar ----------
     public List<Docente> listar() throws SQLException {
 
         List<Docente> lista = new ArrayList<>();
@@ -74,7 +74,7 @@ public class DocenteDAO {
         return lista;
     }
 
-    // ---------- BORRAR ----------
+    // ---------- Borrar ----------
     public void eliminar(int idDocente) throws SQLException {
 
         String sql = "DELETE FROM docentes WHERE id_docente = ?";
