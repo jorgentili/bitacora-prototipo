@@ -1,7 +1,6 @@
 # Archivos compilados por Maven
 target/
 
-# Contraseña real de la base de datos
 src/main/resources/db.properties
 
 # Archivos de configuración de IDEs
