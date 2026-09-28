@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Esta clase sabe cómo guardar, leer y borrar estudiantes en MySQL.
-// Cada método abre su propia conexión, hace su trabajo, y la cierra.
 public class EstudianteDAO {
 
     // ---------- INSERTAR ----------
