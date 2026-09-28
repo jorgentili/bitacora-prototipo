@@ -23,13 +23,9 @@ public class EstudianteDAO {
                      "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         // "try-with-resources": abre la conexión y el PreparedStatement,
-        // y Java se encarga de cerrarlos solo al terminar (aunque haya un error).
         try (Connection conexion = ConexionMySQL.obtenerConexion();
              PreparedStatement ps = conexion.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
 
-            // Los "?" del SQL se completan en orden con setString, setDate, etc.
-            // Esto se llama PreparedStatement: es más seguro que armar el SQL
-            // pegando texto, porque evita el ataque conocido como "inyección SQL".
             ps.setString(1, e.getLegajo());
             ps.setString(2, e.getNombre());
             ps.setString(3, e.getApellido());
