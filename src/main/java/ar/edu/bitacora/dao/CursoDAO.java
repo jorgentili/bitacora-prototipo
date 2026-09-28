@@ -13,7 +13,7 @@ import java.util.List;
 // Sabe cómo guardar, leer y borrar cursos en MySQL. Mismo patrón que EstudianteDAO y DocenteDAO.
 public class CursoDAO {
 
-    // ---------- INSERTAR ----------
+    // ---------- Insertar ----------
     public void insertar(Curso c) throws SQLException {
 
         String sql = "INSERT INTO cursos (nombre, anio_lectivo, division) VALUES (?, ?, ?)";
@@ -35,7 +35,7 @@ public class CursoDAO {
         }
     }
 
-    // ---------- CONSULTAR ----------
+    // ---------- Consltar ----------
     public List<Curso> listar() throws SQLException {
 
         List<Curso> lista = new ArrayList<>();
@@ -60,7 +60,7 @@ public class CursoDAO {
         return lista;
     }
 
-    // ---------- BORRAR ----------
+    // ---------- Borrar ----------
     public void eliminar(int idCurso) throws SQLException {
 
         String sql = "DELETE FROM cursos WHERE id_curso = ?";
