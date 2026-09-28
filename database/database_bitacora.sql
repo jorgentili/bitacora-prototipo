@@ -105,7 +105,7 @@ INSERT INTO cursos(nombre,anio_lectivo,division) VALUES
 
 INSERT INTO estudiantes(legajo,nombre,apellido,dni,email,fecha_nacimiento) VALUES
 ('ALU-001','Jorge','Gentili','28387800','jorge.gentili@bitacora.edu','1980-10-11'),
-('ALU-002','Sofía','Rovere','40222333','sofia.rovere@bitacora.edu','2009-08-21');
+('ALU-002','Eitel','Laccetti','40222333','eitel.laccetti@bitacora.edu','2009-08-21');
 
 INSERT INTO inscripciones(id_estudiante,id_curso,fecha_inscripcion) VALUES
 (1,1,CURRENT_DATE()),(2,1,CURRENT_DATE());
